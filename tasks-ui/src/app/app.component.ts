@@ -32,11 +32,13 @@ export class AppComponent {
   addTask(task: string) {
     this.taskService.addTask(task).subscribe();
     this.task = '';
+    this.ngOnInit();
   }
 
   deleteTask(id: number) {
     this.taskService.deleteTask(id).subscribe((data) => {
       console.log(data);
     });
+    this.ngOnInit();
   }
 }
