@@ -9,17 +9,19 @@ interface Task {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   tasks: Task[];
   task: string;
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   constructor(private taskService: TaskService) {
     this.tasks = [];
     this.task = '';
   }
+
   title = 'task-ui';
+
   ngOnInit() {
     this.taskService.getTasks().subscribe((data) => {
       console.log(data);

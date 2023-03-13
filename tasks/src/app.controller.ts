@@ -9,9 +9,10 @@ import {
   Post,
 } from '@nestjs/common';
 import { AppService, Tasks } from './app.service';
-@Controller('api/todos')
+@Controller('api/tasks')
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
   @Get()
   getTodos(): Tasks[] {
     try {

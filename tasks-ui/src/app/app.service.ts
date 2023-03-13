@@ -10,6 +10,7 @@ export interface Tasks {
 @Injectable()
 export class AppService {
   private tasks: Array<Tasks>;
+
   constructor() {
     this.tasks = JSON.parse(fs.readFileSync('tasks.json', 'utf8'));
   }
